@@ -58,6 +58,16 @@ sections.forEach(section => {
 
 
 // Scroll to anchor ID using scrollTO event
+const links = document.querySelectorAll("a");
+links.forEach((link) => {
+    link.addEventListener("click", (event) => {
+        event.preventDefault();
+        const target = document.querySelector(link.getAttribute("href"));
+        target.scrollIntoView({ 
+            behavior: "smooth" 
+        });
+    });
+});
 
 
 /**
