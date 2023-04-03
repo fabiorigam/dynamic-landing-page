@@ -14,23 +14,23 @@
 */
 
 /**
- * Comments should be present at the beginning of each procedure and class.
- * Great to have comments before crucial code sections within the procedure.
-*/
-
-/**
  * Define Global Variables
  * 
 */
+const navbar = document.getElementById('navbar__list');
+const sections = document.querySelectorAll('section');
 
+const options = {
+    threshold: 0.5,
+    root: null,
+    rootMargin: '0px'
+};
 
 /**
  * End Global Variables
  * Start Helper Functions
  * 
 */
-
-
 
 /**
  * End Helper Functions
@@ -39,9 +39,6 @@
 */
 
 // build the nav
-const navbar = document.getElementById('navbar__list');
-const sections = document.querySelectorAll('section');
-
 sections.forEach(section => {
     const liElement = document.createElement('li');
     const aElement = document.createElement('a');
@@ -55,6 +52,19 @@ sections.forEach(section => {
 
 
 // Add class 'active' to section when near top of viewport
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active-class');
+        } else {
+            entry.target.classList.remove('active-class');
+        }
+    });
+}, options);
+
+sections.forEach(section => {
+    observer.observe(section);
+});
 
 
 // Scroll to anchor ID using scrollTO event
@@ -69,15 +79,8 @@ links.forEach((link) => {
     });
 });
 
-
 /**
  * End Main Functions
  * Begin Events
  * 
 */
-
-// Build menu 
-
-// Scroll to section on link click
-
-// Set sections as active
