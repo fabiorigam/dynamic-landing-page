@@ -5,12 +5,15 @@ Second project of the [Udacity](https://www.udacity.com/)'s FrontEnd Nanodegree.
 ### Architecture
 
 The project has the following structure:
-`css
-\- styles.css    
+
+```
+css
+\- styles.css
 index.html
 js
 \- app.js
-README.md`
+README.md
+```
 
 ### Installation Usage
 
