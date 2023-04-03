@@ -8,10 +8,10 @@ The project has the following structure:
 
 ```
 css
-\- styles.css
+- styles.css
 index.html
 js
-\- app.js
+- app.js
 README.md
 ```
 
