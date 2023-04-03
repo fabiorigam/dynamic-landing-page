@@ -9,9 +9,9 @@ The project has the following structure:
 ```
 css
 - styles.css
-index.html
 js
 - app.js
+index.html
 README.md
 ```
 
