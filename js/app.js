@@ -53,11 +53,16 @@ sections.forEach(section => {
 
 // Add class 'active' to section when near top of viewport
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry, i) => {
+        const active_link = document.querySelector('a[href="#' + entry.target.id + '"]');
         if (entry.isIntersecting) {
             entry.target.classList.add('active-class');
+            //add 'active_button' class to the specific nav button according to section ID
+            active_link.classList.add('active_link');
         } else {
             entry.target.classList.remove('active-class');
+            //remove 'active_button' class from the specific nav button according to section ID
+            active_link.classList.remove('active_link');
         }
     });
 }, options);

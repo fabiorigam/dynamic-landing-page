@@ -87,6 +87,12 @@ section {
     transition: ease 0.3s all;
 }
 
+.active_link {
+    display: block;
+    background: #333;
+    color: #cc1 !important;
+}
+
 /* Header Styles */
 .page__header {
     background: #fff;
